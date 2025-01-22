@@ -1,0 +1,15 @@
+#/bin/bash
+email=$(awk '{print $1}' ~/.alcapass)
+password=$(awk '{print $2}' ~/.alcapass)
+
+# on recupere le "token"
+challenge=$(curl -k -L --request GET https://alcasar.laplateforme.io/intercept.php 2>&1 | grep -oP 'name="challenge" value="\K(?:(?!").)*')
+
+curl --request POST --url https://alcasar.laplateforme.io/intercept.php \
+    --header 'Content-Type: multipart/form-data' \
+    --form username=$email --form password=$password \
+    --form  challenge=$challenge --form button=Authentication \
+    --location https://alcasar.laplateforme.io/intercept.php
+
+#    --form  userurl=http://detectportal.firefox.com/canonical.html \
+#    --location https://alcasar.laplateforme.io/intercept.php
