@@ -10,6 +10,3 @@ curl --request POST --url https://alcasar.laplateforme.io/intercept.php \
     --form username=$email --form password=$password \
     --form  challenge=$challenge --form button=Authentication \
     --location https://alcasar.laplateforme.io/intercept.php
-
-#    --form  userurl=http://detectportal.firefox.com/canonical.html \
-#    --location https://alcasar.laplateforme.io/intercept.php
