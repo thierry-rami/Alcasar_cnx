@@ -9,4 +9,4 @@ curl --request POST --url https://alcasar.laplateforme.io/intercept.php \
     --header 'Content-Type: multipart/form-data' \
     --form username=$email --form password=$password \
     --form  challenge=$challenge --form button=Authentication \
-    --location https://alcasar.laplateforme.io/intercept.php
+    --location https://alcasar.laplateforme.io/intercept.php >/dev/null 2>&1

@@ -1,2 +1,2 @@
 #/bin/bash
-curl https://alcasar.laplateforme.io:3991/logoff
+curl https://alcasar.laplateforme.io:3991/logoff >/dev/null 2>&1
